@@ -18,8 +18,8 @@ class ContohController extends Controller
             'tanggal_lahir', 'umur', 'alamat', 'asal_sekolah'
         ];
         $fakultas = [
-            'perguruan_tinggi', 'tanggalberdiri ', 'nomorskpt', 'tanggalskpt', 'alamat', 'kota',
-            'kodepos', 'telepon', 'faximile', 'emal'
+            'perguruan_tinggi', 'tanggal_berdiri ', 'nomor_sk_pt', 'tanggal_sk_pt', 'alamat', 'kota',
+            'kodepos', 'telepon', 'faximile', 'email'
         ];
         $transaksi = [
             'harga', 'namabarang ', 'kode', 'supplier', 'customer', 'pemasukan',
