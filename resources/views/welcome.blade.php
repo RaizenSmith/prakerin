@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Candra
+                    Candraa
                 </div>
 
                 <div class="links">
