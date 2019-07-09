@@ -27,15 +27,38 @@
                         <button class="btn btn-success tombol-simpan">Simpan</button>
                     </div>
 
-                    <div class="card-body">
-                        <table id="bs4-table" class="table table-striped table-bordered data-kategori">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Slug</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </table>
-                    </div>
+                    <div class="content">
+					<section class="page-content container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<h5 class="card-header">Data Tables</h5>
+									<div class="card-body">
+										<table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
+											<thead>
+												<tr>
+													 <th>Nama</th>
+                                                     <th>Slug</th>
+                                                     <th>Aksi</th>
+												</tr>
+											</thead>
+											<tbody  class="data-kategori">
+                                                {{-- isi js kategori --}}
+											</tbody>
+											<tfoot>
+												<tr>
+													<th>Nama</th>
+													<th>Slug</th>
+													<th>Aksi</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
 
                 </div>
             </div>
