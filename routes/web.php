@@ -53,3 +53,7 @@ Route::get('/kategori', function () {
 Route::get('/tag', function () {
     return view('backend.tag.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
