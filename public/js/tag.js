@@ -4,7 +4,7 @@ $(function() {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
         }
     });
-    var alamat = "api/siswa";
+    var alamat = "api/tag";
 
     // Get Data Siswa
     $.ajax({
@@ -14,13 +14,15 @@ $(function() {
         success: function(berhasil) {
             // console.log(berhasil)
             $.each(berhasil.data, function(key, value) {
-                $(".data-siswa").append(
+                $(".data-tag").append(
                     `
-                    <li>${
-                        value.nama
-                    } <button class="btn btn-danger btn-sm hapus-data" data-id="${
+                    <tr>
+                    <td>${value.nama_tag}</td>
+                    <td>${value.slug}</td>
+                    <td><button class="btn btn-danger btn-sm hapus-data" data-id="${
                         value.id
-                    }">Hapus</button></li>
+                    }">Hapus</button></td>
+                    </tr>
                     `
                 );
             });
@@ -30,14 +32,15 @@ $(function() {
     // Simpan Data
     $(".tombol-simpan").click(function(simpan) {
         simpan.preventDefault();
-        var variable_isian_nama = $("input[name=namasiswa]").val();
+        var variable_isian_nama = $("input[name=nama_tag]").val();
         // console.log(nama)
         $.ajax({
             url: alamat,
             method: "POST",
             dataType: "json",
             data: {
-                namasiswa: variable_isian_nama
+                nama_tag: variable_isian_nama,
+                slug: variable_isian_nama
             },
             success: function(berhasil) {
                 alert(berhasil.message);
@@ -50,7 +53,7 @@ $(function() {
     });
 
     // Hapus Data
-    $(".data-siswa").on("click", ".hapus-data", function() {
+    $(".data-tag").on("click", ".hapus-data", function() {
         var id = $(this).data("id");
         // alert(id)
         $.ajax({

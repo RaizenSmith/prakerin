@@ -72,12 +72,5 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('js/siswa.js') }}"></script>
-    @stack('script')
-</body>
+
 </html>

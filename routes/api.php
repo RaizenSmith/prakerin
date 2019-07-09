@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,6 @@ Route::resource('contoh', 'ContohController');
 Route::resource('sekolah', 'SekolahController');
 // Route::get('contoh2', 'ContohController@index2');
 // Route::get('contoh3', 'ContohController@index3');
+Route::resource('siswa', 'SiswaController');
+Route::resource('kategori', 'KategoriController');
+Route::resource('tag', 'TagController');

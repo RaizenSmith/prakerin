@@ -29,7 +29,7 @@
 	<!-- ======================= LAYOUT TYPE ===========================-->
 	<link rel="stylesheet" href="{{ asset('assets/backend/assets/css/layouts/vertical/core/main.css')}}">
 	<!-- ======================= MENU TYPE ===========================-->
-		<link rel="stylesheet" href="{{ asset('assets/backend/assets/css/layouts/vertical/menu-type/default.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/backend/assets/css/layouts/vertical/menu-type/default.css')}}">
 	<!-- ======================= THEME COLOR STYLES ===========================-->
 	<link rel="stylesheet" href="{{ asset('assets/backend/assets/css/layouts/vertical/themes/theme-a.css')}}">
 </head>
@@ -58,9 +58,9 @@
 			</div>
 		</div>
 		<!-- END CONTENT WRAPPER -->
-			<!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
+            <!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
 			<script src="{{ asset('assets/backend/assets/vendor/modernizr/modernizr.custom.js')}}"></script>
-			<script src="{{ asset('assets/backend/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+            <script src="{{ asset('assets/backend/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 			<script src="{{ asset('assets/backend/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 			<script src="{{ asset('assets/backend/assets/vendor/js-storage/js.storage.js')}}"></script>
 			<script src="{{ asset('assets/backend/assets/vendor/js-cookie/src/js.cookie.js')}}"></script>
@@ -101,7 +101,11 @@
 		})(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
 		ga('create', 'UA-46627904-1', 'authenticgoods.co');
 		ga('send', 'pageview');
-	</script>
+    </script>
+    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('js/kategori.js') }}"></script>
+    <script src="{{ asset('js/tag.js') }}"></script>
+    @stack('script')
 </body>
 
 <!-- Mirrored from www.authenticgoods.co/themes/quantum-pro/demos/demo1/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jan 2019 02:27:43 GMT -->

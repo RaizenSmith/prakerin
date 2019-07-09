@@ -40,10 +40,16 @@ Route::group(
         Route::get('/', function () {
             return view('backend.index');
         });
-        route::resource('kategori', 'KategoriController');
+        // route::resource('kategori', 'KategoriController');
         route::resource('tag', 'TagController');
         route::resource('artikel', 'ArtikelController');
+        // ajax
+
     }
 );
-
-Route::resource('siswa', 'SiswaController');
+Route::get('/kategori', function () {
+    return view('backend.kategori.index');
+});
+Route::get('/tag', function () {
+    return view('backend.tag.index');
+});
