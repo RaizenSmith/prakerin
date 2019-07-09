@@ -13,7 +13,7 @@ class FrontendController extends Controller
     {
         // $artikel = Artikel::orderBy('created_at', 'desc')->take(4)->get();
         // return view('frontend.index', compact('artikel'));
-        return view('frontend.index')
+        return view('frontend.index');
     }
     public function contact()
     {
