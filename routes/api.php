@@ -19,10 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => 'cors'], function () {
+
+    // Route::get('contoh2', 'ContohController@index2');
+    // Route::get('contoh3', 'ContohController@index3');
+    Route::resource('siswa', 'SiswaController');
+    Route::resource('kategori', 'KategoriController');
+    Route::resource('tag', 'TagController');
+});
+
 Route::resource('contoh', 'ContohController');
 Route::resource('sekolah', 'SekolahController');
-// Route::get('contoh2', 'ContohController@index2');
-// Route::get('contoh3', 'ContohController@index3');
-Route::resource('siswa', 'SiswaController');
-Route::resource('kategori', 'KategoriController');
-Route::resource('tag', 'TagController');

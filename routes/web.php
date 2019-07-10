@@ -34,15 +34,16 @@ Route::group(
     }
 );
 
+Auth::routes();
 Route::group(
     ['prefix' => 'admin', 'middleware' => ['auth']],
     function () {
         Route::get('/', function () {
             return view('backend.index');
         });
-        // route::resource('kategori', 'KategoriController');
+        route::resource('kategori', 'KategoriController');
         route::resource('tag', 'TagController');
-        route::resource('artikel', 'ArtikelController');
+        // route::resource('artikel', 'ArtikelController');
         // ajax
 
     }
@@ -53,7 +54,3 @@ Route::get('/kategori', function () {
 Route::get('/tag', function () {
     return view('backend.tag.index');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
