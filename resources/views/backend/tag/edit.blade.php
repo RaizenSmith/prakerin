@@ -1,30 +1,28 @@
-@extends('layouts.backend')
-@section('content')
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <center>
-                        <div class="card-header">Tambah tag</div>
-                    </center>
-
-                    <div class="card-body">
-                        <form action="{{route('tag.update', $tag->id)}}" method="post">
-                            <input type="hidden" name="_method" value="PATCH">
-                            {{csrf_field()}}
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input class="form-control" type="text" name="nama_tag" id="" value="{{$tag->nama_tag}}">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-outline-info">
-                                    Simpan Data
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<div class="modal fade bd-example-modal-lg-{{ $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalTitle2">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="zmdi zmdi-close"></span>
+                </button>
             </div>
+            <div class="modal-body">
+                <form action="{{ route('kategori.update', $data->id) }}" method="POST">
+                        <input type="hidden" value="PATCH" name="_method">
+                    {{ csrf_field() }}
+
+                    <div class="form-group">
+                        <label for="">Nama Kategori</label>
+                        <input class="form-control" type="text" name="nama_kategori" value="{{ $data->nama_kategori }}">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-outline" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>{{-- Form tutup --}}
         </div>
     </div>
-@endsection
+</div>

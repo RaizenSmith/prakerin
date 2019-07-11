@@ -1,13 +1,5 @@
 @extends('layouts.backend')
-@section('css')
-<link rel="stylesheet" href="{{ asset('assets/backend/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css')}}"><body>
-@endsection
 
-@section('js')
-<script src="{{asset('assets/backend/assets/vendor/datatables.net/js/jquery.dataTables.js')}}"></script>
-<script src="{{asset('assets/backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
-<script src="{{asset('assets/backend/assets/js/components/datatables-init.js')}}"></script>
-@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -16,50 +8,50 @@
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
                     {{-- <form action="">
-
-
                     </form> --}}
                     <div class="form-group">
-                        <label>masukan nama</label>
-                        <input type="text" name="nama_tag" class="form-control" required>
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="float-right btn btn-primary btn-rounded btn-outline">Tambah Data</button>
+                            <br>
+                            <div id="id01" class="modal">
+                            <form class="modal-content animate" action="/action_page.php">
+                                <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <h2>Tambah Data</h2>
+                                </div>
+                                <div class="container">
+                                    <label>Masukin Nama Kategori : </label>
+                                    <input type="text" name="nama_kategori" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                    {{-- <center><img src="{{ asset('assets/backend/assets/img/milos.jpg')}}" alt=""></center> --}}
+                                </div>
+                                <div class="container" style="background-color:#f1f1f1">
+                                    <button class="float-right btn btn-info btn-rounded btn-outline tombol-simpan">Simpan</button>
+                                </div>
+                            </form>
+                            </div>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-success tombol-simpan">Simpan</button>
+                    <div class="card-body">
+                        <table id="bs4-table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Slug</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="data-kategori">
+                                {{-- Isinya dari class --}}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Slug</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-
-                    <div class="content">
-					<section class="page-content container-fluid">
-						<div class="row">
-							<div class="col-12">
-								<div class="card">
-									<h5 class="card-header">Data Tables</h5>
-									<div class="card-body">
-										<table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
-											<thead>
-												<tr>
-													 <th>Nama</th>
-                                                     <th>Slug</th>
-                                                     <th>Aksi</th>
-												</tr>
-											</thead>
-											<tbody  class="data-tag">
-                                                {{-- isi js tag --}}
-											</tbody>
-											<tfoot>
-												<tr>
-													<th>Nama</th>
-													<th>Slug</th>
-													<th>Aksi</th>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-
                 </div>
             </div>
         </div>

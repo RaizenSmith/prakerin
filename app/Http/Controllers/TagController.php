@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
-use Session;
 
-class tagController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +18,10 @@ class tagController extends Controller
         $response = [
             'success' => true,
             'data' =>  $tag,
-            'message' => 'Berhasil ditampilkan.'
+            'message' => 'Berhasil!'
         ];
         return response()->json($response, 200);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -31,9 +29,8 @@ class tagController extends Controller
      */
     public function create()
     {
-        return view('backend.tag.create');
+        //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -42,19 +39,18 @@ class tagController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['nama_tag' => 'required|unique:tags']);
         $tag = new Tag();
         $tag->nama_tag = $request->nama_tag;
         $tag->slug = str_slug($request->nama_tag, '-');
         $tag->save();
-
         $response = [
             'success' => true,
-            'data' =>  $tag,
-            'message' => 'Berhasil ditambahkan.'
+            'data' => $tag,
+            'message' => 'Berhasil Ditambahkan!'
         ];
         return response()->json($response, 200);
     }
-
     /**
      * Display the specified resource.
      *
@@ -65,7 +61,6 @@ class tagController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -74,10 +69,8 @@ class tagController extends Controller
      */
     public function edit($id)
     {
-        $tag = Tag::findOrfail($id);
-        return view('backend.tag.edit', compact('tag'));
+        //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -87,21 +80,18 @@ class tagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama_tag' => 'required'
-        ]);
-        $tag = Tag::findOrfail($id);
+        $request->validate(['nama_tag' => 'required|unique:tags']);
+        $tag = Tag::findOrFail($id);
         $tag->nama_tag = $request->nama_tag;
         $tag->slug = str_slug($request->nama_tag, '-');
         $tag->save();
-        Session::flash("flash_notification", [
-            "level" => "success",
-            "message" => "Berhasil mengedit<b>"
-                . $tag->nama_tag . "</b>"
-        ]);
-        return redirect()->route('tag.index');
+        $response = [
+            'success' => true,
+            'data' => $tag,
+            'message' => 'Berhasil Dirubah!'
+        ];
+        return response()->json($response, 200);
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -110,12 +100,11 @@ class tagController extends Controller
      */
     public function destroy($id)
     {
-        $tag = Tag::find($id)->delete($id);
-
+        $tag = Tag::findOrFail($id)->delete();
         $response = [
             'success' => true,
             'data' =>  $tag,
-            'message' => 'Berhasil dihapus.'
+            'message' => 'Berhasil Dihapus!'
         ];
         return response()->json($response, 200);
     }
