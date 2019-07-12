@@ -80,17 +80,16 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(['nama_kategori' => 'required|unique:kategoris']);
+        $request->validate(['nama' => 'required|unique:kategoris']);
         $kategori = Kategori::findOrFail($id);
-        $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->slug = str_slug($request->nama_kategori, '-');
+        $kategori->nama = $request->nama;
+        $kategori->slug = str_slug($request->nama, '-');
         $kategori->save();
-        $response = [
-            'success' => true,
-            'data' => $kategori,
-            'message' => 'Berhasil Dirubah!'
-        ];
-        return response()->json($response, 200);
+        Session::flash('flash_notification', [
+            'level' => 'warning',
+            'message' => 'Berhasil Mengedit data <b>' . $kategori->nama . '</b>'
+        ]);
+        return redirect()->route('kategori.index');
     }
     /**
      * Remove the specified resource from storage.

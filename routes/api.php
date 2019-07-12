@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'cors'], function () {
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/tag', 'TagController');
+    Route::resource('/artikel', 'ArtikelController');
 });

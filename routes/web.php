@@ -40,7 +40,12 @@ Route::group(
         Route::get('/', function () {
             return view('backend.index');
         });
+        Route::resource('/artikel', 'ArtikelKontroller');
         Route::resource('/kategori', 'KategoriKontroller');
         Route::resource('/tag', 'TagKontroller');
     }
 );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

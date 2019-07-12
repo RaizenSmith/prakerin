@@ -19,8 +19,8 @@
                                 <h2>Tambah Data</h2>
                                 </div>
                                 <div class="container">
-                                    <label>Masukin Nama Kategori : </label>
-                                    <input type="text" name="nama_kategori" class="form-control" required>
+                                    <label>Masukin Nama tag : </label>
+                                    <input type="text" name="nama_tag" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                     {{-- <center><img src="{{ asset('assets/backend/assets/img/milos.jpg')}}" alt=""></center> --}}
@@ -40,7 +40,7 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody class="data-kategori">
+                            <tbody class="data-tag">
                                 {{-- Isinya dari class --}}
                             </tbody>
                             <tfoot>
