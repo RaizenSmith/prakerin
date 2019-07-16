@@ -44,7 +44,7 @@
                         <a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">
                             <span>
-                                Dropdown
+                                Menu
                             </span>
                             <i class="la la-angle-down menu-arrow-down"></i>
                         </a>
@@ -56,104 +56,13 @@
                                 <ul class="list-reset filter-list" data-scroll="minimal-dark">
                                     <li><a class="dropdown-item" href="{{ route('kategori.index') }}">Kategori</a></li>
                                     <li><a class="dropdown-item" href="{{ route('tag.index') }}">Tag</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('artikel.index') }}">Artikel</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <!-- START MEGA MENU -->
-                    <li class="nav-item nav-text dropdown dropdown-menu-xl">
-                        <a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">
-                            <span>
-                                Mega Menu
-                            </span>
-                            <i class="la la-angle-down menu-arrow-down"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left">
-                            <div class="row">
-                                <div class="col">
-                                    <h3 class="menu-header">Shop Top Categories</h3>
-                                    <ul class="list-items">
-                                        <li>
-                                            <a href="javascript:void(0);">T-Shirts</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Tank Tops &amp; Fitted Tees</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Polos &amp; Button-Ups</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Women's Tops</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Dresses &amp; Skirts</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Sweaters &amp; Cardigans</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Hoodies</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Jackets &amp; Outerwear</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Activewear &amp; Swimwear</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Men's Jeans</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col">
-                                    <h3 class="menu-header">Accessories</h3>
-                                    <ul class="list-items">
-                                        <li>
-                                            <a href="javascript:void(0);">Footwear</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Keychains &amp; Bag Accessories</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Wallets</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Hats &amp; Hair</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Ties &amp; Cufflinks</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Belts &amp; Suspenders</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Scarves</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Pouches &amp; Coin Purses</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Sunglasses</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Other Accessories</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col">
-                                    <figure class="tint">
-                                        <div class="promo">
-                                            <h3>Grand Opening Sale!</h3>
-                                            <h4>Save up to 30% off.</h4>
-                                            <button class="btn btn-primary btn-rounded">Shop Now</button>
-                                        </div>
-                                        <img src="{{ asset('assets/backend/assets/img/demos/ecom-header.jpg')}}" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    
                     <!-- END MEGA MENU -->
                 </ul>
                 <!-- END LEFT DROPDOWN MENUS -->
@@ -317,11 +226,6 @@
                                         @csrf
                                     </form>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" data-toggle-state="aside-right-open">
-                            <i class="icon dripicons-align-right"></i>
-                        </a>
                     </li>
                 </ul>
                 <!-- END RIGHT TOOLBAR ICON MENUS -->

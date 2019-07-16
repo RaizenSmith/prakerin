@@ -45,7 +45,3 @@ Route::group(
         Route::resource('/tag', 'TagKontroller');
     }
 );
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

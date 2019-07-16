@@ -15,12 +15,10 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <h5 class="card-header">Data Tables Artikel</h5><br>
-                <center>
-                        <a href="{{ route('artikel.create') }}"
-                            class="la la-cloud-upload btn btn-info btn-rounded btn-floating btn-outline">&nbsp;Tambah Data
-                        </a>
-                </center>
+                <h5 class="card-header">Data Tables Artikel<a href="{{ route('artikel.create') }}"
+                    class="float-right btn btn-primary btn-rounded btn-outline">&nbsp;Tambah Data
+                </a></h5>    
+                
                 <div class="card-body">
                     <table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
                         <thead>
