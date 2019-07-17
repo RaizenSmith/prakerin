@@ -7,30 +7,30 @@ use Session;
 
 class Kategori extends Model
 {
-    protected $fillable = ['nama_kategori', 'slug'];
+    protected $fillable = ['nama_kategori','slug'];
     public $timestamps = true;
+
     public function artikel()
     {
-        return $this->hasMany('App\Artikel', 'id_kategori');
+        return $this->hasMany('App\Artikel','id_kategori');
     }
-    public static function boot()
-    {
+    public static function boot(){
         parent::boot();
-        self::deleting(function ($kategori) {
-            //mengecek apakah kategori masih digunakan oleh artikel
-            if ($kategori->artikel->count() > 0) {
-                //menyimpan pesan error
-                $html = 'Kategori tidak bisa dihapus karena masih digunakan oleh Artikel';
+        self::deleting(function ($kategori){
+        // mengecek apakah kategori masih digunakan oleh artikel
+            if ($kategori->artikel->count()>0){
+                // menyiapkan pesan error
+                $html = 'Kategori tidak bisa di hapus karena masih digunakan oleh Artikel: ';
                 $html .= '<ul>';
-                foreach ($kategori->artikel as $data) {
-                    $html .= "<li>$data->judul</li>";
+                foreach($kategori->artikel as $data) {
+                    $html .= "<li>$data->judul</lli>";
                 }
-                $html .= '</ul>';
-                Session::flash('flash_notification', [
+                $html .='</ul>';
+                Session::flash("flash_notification",[
                     "level" => "danger",
                     "message" => $html
                 ]);
-                //membatalkan proses penghapusan
+                // membatalkan proses penghapusan
                 return false;
             }
         });
