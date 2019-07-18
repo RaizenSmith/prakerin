@@ -7,12 +7,11 @@
     <div class="hero-area">
 
         <!-- Hero Slides Area -->
-        <div class="hero-slides owl-carousel" >
-            @foreach ($artikel as $data)
-                <!-- Single Slide -->
-                <div class="single-hero-slide bg-img background-overlay">
-                    <img class="background-image" src="../assets/img/artikel/{{$data->foto}}"> </div>
-            @endforeach
+        <div class="hero-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url{{asset('assets/frontend/img/blog-img/bg2.jpg')}};"></div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url{{asset('assets/frontend/img/blog-img/bg1.jpg')}};"></div>
         </div>
 
         <!-- Hero Post Slide -->
@@ -77,7 +76,7 @@
                 <div class="single-blog-post post-style-3 mt-50 wow fadeInUpBig" data-wow-delay="0.2s">
                     <!-- Post Thumbnail -->
                     <div class="post-thumbnail">
-                        <img src="{{ asset('assets/img/artikel/'.$data->foto.'')}}"   alt="">
+                        <img src="{{ asset('assets/img/artikel/'.$data->foto.'')}}" style="height:300px"  alt="">
                         <!-- Post Content -->
                         <div class="post-content d-flex align-items-center justify-content-between">
                             <!-- Catagory -->
@@ -111,7 +110,7 @@
                         
                             <!-- Post Thumbnail -->
                         <div class="post-thumbnail">
-                            <img src="{{ asset('assets/img/artikel/'.$data->foto.'')}}" alt="" height="200px" width="200px">
+                            <img src="{{ asset('assets/img/artikel/'.$data->foto.'')}}" alt="" style="height:170px">
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">

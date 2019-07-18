@@ -202,8 +202,8 @@
                                     <img class="align-self-center mr-3 w-40 rounded-circle"
                                         src="{{ asset('assets/backend/assets/img/avatars/1.jpg')}}" alt="Albert Einstein">
                                     <div class="media-body">
-                                        <h5 class="mt-0 mb-0">Albert Einstein</h5>
-                                        <span>support@authenticgoods.co</span>
+                                        <h5 class="mt-0 mb-0">{{Auth::user()->name}}</h5>
+                                        <span>{{Auth::user()->email}}</span>
                                     </div>
                                 </div>
                             </div>
